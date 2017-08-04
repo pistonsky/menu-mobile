@@ -4,7 +4,9 @@ import { View, Text } from 'react-native';
 const TabIcon = ({ title }) => {
   return (
     <View>
-      <Text>{title}</Text>
+      <Text>
+        {title}
+      </Text>
     </View>
   );
 };

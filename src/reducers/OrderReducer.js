@@ -1,6 +1,8 @@
+import { ADD_MENU_ITEM } from '../actions/types';
+
 export default (state = [], action) => {
   switch (action.type) {
-    case 'add_menu_item':
+    case ADD_MENU_ITEM:
       return [...state, action.payload];
     default:
       return state;

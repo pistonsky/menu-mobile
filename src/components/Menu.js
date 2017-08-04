@@ -19,15 +19,12 @@ class Menu extends Component {
 
   render() {
     const dataSource = this.ds.cloneWithRows(
-      this.props.menu.map(
-        item => { return { ...item, expanded: item.id === this.props.selectedMenuItemId }; }));
-
-    return (
-      <ListView
-        dataSource={dataSource}
-        renderRow={this.renderRow}
-      />
+      this.props.menu.map(item => {
+        return { ...item, expanded: item.id === this.props.selectedMenuItemId };
+      })
     );
+
+    return <ListView dataSource={dataSource} renderRow={this.renderRow} />;
   }
 }
 

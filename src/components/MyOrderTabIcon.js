@@ -6,13 +6,17 @@ const MyOrderTabIcon = ({ title, totalPrice }) => {
   if (totalPrice > 0) {
     return (
       <View>
-        <Text>{title} ({totalPrice} IDR)</Text>
+        <Text>
+          {title} ({totalPrice} IDR)
+        </Text>
       </View>
     );
   }
   return (
     <View>
-      <Text>{title}</Text>
+      <Text>
+        {title}
+      </Text>
     </View>
   );
 };
@@ -20,8 +24,9 @@ const MyOrderTabIcon = ({ title, totalPrice }) => {
 const mapStateToProps = state => {
   return {
     itemsCount: state.order.length,
-    totalPrice: state.order.map(
-      id => state.menu.find(item => item.id === id)).reduce((a, b) => a + b.price, 0)
+    totalPrice: state.order
+      .map(id => state.menu.find(item => item.id === id))
+      .reduce((a, b) => a + b.price, 0)
   };
 };
 

@@ -23,10 +23,7 @@ class MenuItem extends Component {
       return (
         <View>
           <CardSection>
-            <Image
-              style={imageStyle}
-              source={{ uri: menuItem.image }}
-            />
+            <Image style={imageStyle} source={{ uri: menuItem.image }} />
           </CardSection>
 
           <CardSection>
@@ -49,20 +46,19 @@ class MenuItem extends Component {
     const { id, title, thumbnail_image, price } = this.props.menuItem;
 
     return (
-      <TouchableWithoutFeedback
-        onPress={() => this.props.selectMenuItem(id)}
-      >
+      <TouchableWithoutFeedback onPress={() => this.props.selectMenuItem(id)}>
         <View>
           <CardSection>
             <View style={thumbnailContainerStyle}>
-              <Image
-                style={thumbnailStyle}
-                source={{ uri: thumbnail_image }}
-              />
+              <Image style={thumbnailStyle} source={{ uri: thumbnail_image }} />
             </View>
             <View style={menuItemShortInfoStyle}>
-              <Text style={menuItemTitleStyle}>{title}</Text>
-              <Text>{price} IDR</Text>
+              <Text style={menuItemTitleStyle}>
+                {title}
+              </Text>
+              <Text>
+                {price} IDR
+              </Text>
             </View>
           </CardSection>
           {this.renderDescription()}
@@ -98,7 +94,7 @@ const styles = {
 };
 
 const mapStateToProps = () => {
-  return { };
+  return {};
 };
 
 export default connect(mapStateToProps, actions)(MenuItem);

@@ -15,8 +15,9 @@ class MyOrder extends Component {
 
 const mapStateToProps = state => {
   return {
-    items: state.order.map((id, index) => 
-      <MenuItem key={index} menuItem={state.menu.find(x => x.id === id)} />)
+    items: state.order.map((id, index) =>
+      <MenuItem key={index} menuItem={state.menu.find(x => x.id === id)} />
+    )
   };
 };
 
