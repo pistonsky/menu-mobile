@@ -2,8 +2,13 @@ import React, { Component } from 'react';
 import { ListView } from 'react-native';
 import { connect } from 'react-redux';
 import MenuItem from './MenuItem';
+import { fetchMenu } from '../actions';
 
 class Menu extends Component {
+  componentDidMount() {
+    this.props.fetchMenu();
+  }
+
   ds = new ListView.DataSource({
     rowHasChanged: (r1, r2) => r1 !== r2
   });
@@ -33,4 +38,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Menu);
+export default connect(mapStateToProps, { fetchMenu })(Menu);
