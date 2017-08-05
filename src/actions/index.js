@@ -1,16 +1,16 @@
 import * as api from '../api';
-import { MENU_UPDATED } from './types';
+import { MENU_UPDATED, SELECT_MENU_ITEM, ADD_MENU_ITEM } from './types';
 
 export const selectMenuItem = itemId => {
   return {
-    type: 'select_menu_item',
+    type: SELECT_MENU_ITEM,
     payload: itemId
   };
 };
 
 export const addMenuItem = itemId => {
   return {
-    type: 'add_menu_item',
+    type: ADD_MENU_ITEM,
     payload: itemId
   };
 };
